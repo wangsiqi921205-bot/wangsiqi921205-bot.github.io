@@ -4,22 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f4f2ed" />
-    <meta name="description" content="WANGSIQI Studio 以商业定位为起点，整合品牌系统、商业空间、AI 视觉与数字体验。" />
-    <meta property="og:title" content="WANGSIQI Studio — Brand, Space & Digital Experience" />
-    <meta property="og:description" content="从商业定位到空间体验，构建完整且可持续的商业表达。" />
+    <meta name="description" content="WANGSIQI是一名独立设计师，专注女性商业项目与儿童体适能项目的VI视觉识别、商业空间和空间视觉应用设计。" />
+    <meta property="og:title" content="WANGSIQI Studio｜VI视觉识别与商业空间一体化设计" />
+    <meta property="og:description" content="WANGSIQI是一名独立设计师，专注女性商业项目与儿童体适能项目的VI视觉识别、商业空间和空间视觉应用设计。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wangsiqi921205-bot.github.io/" />
     <meta property="og:image" content="https://wangsiqi921205-bot.github.io/assets/images/hero-commercial-space.webp" />
-    <meta property="og:image:alt" content="WANGSIQI Studio commercial space concept" />
+    <meta property="og:image:alt" content="WANGSIQI Studio 商业空间概念" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://wangsiqi921205-bot.github.io/" />
-    <link rel="icon" href="./assets/icons/wsq-logo.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
-    <title>WANGSIQI Studio — 商业品牌与空间一体化设计</title>
+    <link rel="icon" href="/assets/icons/wsq-logo-transparent.png" type="image/png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "WANGSIQI",
+        "jobTitle": "独立 VI 与商业空间设计师",
+        "email": "mailto:403592913@qq.com",
+        "telephone": "+86-18789493906",
+        "url": "https://wangsiqi921205-bot.github.io/"
+      }
+    </script>
+    <title>WANGSIQI Studio｜VI视觉识别与商业空间一体化设计</title>
   </head>
   <body>
+    <script>
+      const redirectPath = sessionStorage.getItem("wsq-spa-redirect");
+      if (redirectPath) {
+        sessionStorage.removeItem("wsq-spa-redirect");
+        history.replaceState(null, "", redirectPath);
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

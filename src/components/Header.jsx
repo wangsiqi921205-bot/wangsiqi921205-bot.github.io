@@ -1,24 +1,25 @@
 import { AnimatePresence, motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Grid2X2, Plus, X } from "lucide-react";
 import { Logo } from "./Logo.jsx";
 
 const ease = [0.16, 1, 0.3, 1];
 
-export function Header({ language, copy, onLanguageChange, menuOpen, onMenuToggle }) {
+export function Header({ copy, menuOpen, onMenuToggle, ready }) {
   const links = [
-    ["works", copy.works],
-    ["services", copy.services],
-    ["process", copy.process],
-    ["about", copy.about],
+    ["/#intro", "00", copy.home],
+    ["/#about", "01", copy.about],
+    ["/visual", "04", copy.specialties],
+    ["/#contact", "07", copy.contact],
   ];
 
   return (
     <>
       <motion.header
         className="site-header"
-        initial={{ y: -16, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease }}
+        initial={{ y: -24, opacity: 0 }}
+        animate={{ y: ready ? 0 : -24, opacity: ready ? 1 : 0 }}
+        transition={{ delay: ready ? 0.16 : 0, duration: 0.85, ease }}
       >
         <div className="site-header__left">
           <Logo />
@@ -28,15 +29,12 @@ export function Header({ language, copy, onLanguageChange, menuOpen, onMenuToggl
           </button>
         </div>
 
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {links.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
+        <nav className="desktop-nav" aria-label="主要导航">
+          {links.map(([to, , label]) => <Link key={to} to={to}>{label}</Link>)}
         </nav>
 
         <div className="site-header__right">
-          <button className="language-toggle" type="button" onClick={onLanguageChange} aria-label={language === "zh" ? "Switch to English" : "切换为中文"}>
-            <span className={language === "zh" ? "is-active" : ""}>中</span><span>/</span><span className={language === "en" ? "is-active" : ""}>EN</span>
-          </button>
-          <a className="contact-pill" href="#contact"><Grid2X2 size={13} strokeWidth={2.2} /><span>{copy.contact}</span></a>
+          <Link className="contact-pill" to="/#contact"><Grid2X2 size={13} strokeWidth={2.2} /><span>{copy.contact}</span></Link>
         </div>
       </motion.header>
 
@@ -50,11 +48,10 @@ export function Header({ language, copy, onLanguageChange, menuOpen, onMenuToggl
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <motion.nav initial={{ y: 24 }} animate={{ y: 0 }} exit={{ y: 16 }} transition={{ duration: 0.5, ease }} aria-label="Menu">
-              {links.map(([id, label], index) => (
-                <a key={id} href={`#${id}`} onClick={onMenuToggle}><span>0{index + 1}</span>{label}</a>
+            <motion.nav initial={{ y: 24 }} animate={{ y: 0 }} exit={{ y: 16 }} transition={{ duration: 0.5, ease }} aria-label="菜单导航">
+              {links.map(([to, number, label]) => (
+                <Link key={to} to={to} onClick={onMenuToggle}><span>{number}</span>{label}</Link>
               ))}
-              <a href="#contact" onClick={onMenuToggle}><span>05</span>{copy.contact}</a>
             </motion.nav>
           </motion.div>
         )}

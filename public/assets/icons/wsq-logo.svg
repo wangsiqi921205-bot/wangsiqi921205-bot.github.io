@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 64" role="img" aria-labelledby="title desc">
-  <title id="title">WSQ</title>
-  <desc id="desc">WANGSIQI Studio continuous-path monogram</desc>
-  <g fill="none" stroke="#111111" stroke-width="7" stroke-linecap="square" stroke-linejoin="round">
-    <path d="M8 9 20 54 34 28 48 54 60 9"/>
-    <path d="M112 10H82c-10 0-16 6-16 14s6 13 16 13h16c10 0 16 6 16 13s-6 10-16 10H68"/>
-    <path d="M164 56h-22c-13 0-22-9-22-22v-2c0-13 9-22 22-22h10c13 0 22 9 22 22v24M154 43l22 17"/>
-  </g>
-</svg>
